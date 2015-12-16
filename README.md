@@ -1,0 +1,3 @@
+```
+node hello.js
+```

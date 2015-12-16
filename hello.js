@@ -269,7 +269,7 @@ function doit(url, width, height, next) {
 }
 
 var queue = []
-urls.forEach(function(url, index) {
+urls.reverse().forEach(function(url, index) {
 	if (!url) return
 
 	queue.unshift(function() {
