@@ -1,0 +1,97 @@
+// ----------------------------------------
+// Media queries
+// ----------------------------------------
+
+// Extra small screen
+@screen-xs:         320px;
+@screen-xs-min:     @screen-xs;
+// Small screen
+@screen-sm:         768px;
+@screen-sm-min:     @screen-sm;
+// Medium screen
+@screen-md:         1024px;
+@screen-md-min:     @screen-md;
+// Large screen
+@screen-lg:         1280px;
+@screen-lg-min:     @screen-lg;
+// maximum
+@screen-xs-max:     (@screen-sm-min - 1);
+@screen-sm-max:     (@screen-md-min - 1);
+@screen-md-max:     (@screen-lg-min - 1);
+
+// device: phone tablet desktop desktop-lg
+@device-phone:         ~"only screen and (max-width: 767px)";
+@device-tablet:        ~"only screen and (min-width: 768px) and (max-width: 1023px)";
+@device-desktop:       ~"only screen and (min-width: 1024px) and (max-width: 1279px)";
+@device-desktop-lg:    ~"only screen and (min-width: 1280px)";
+
+.card-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    .card {
+        display: flex;
+        flex-direction: column;
+
+        @media @device-phone {
+            flex: 0 0 100%;
+        }
+        @media @device-tablet {
+            flex: 0 0 46%;
+            margin-left: 1%;
+            margin-right: 1%;
+        }
+        @media @device-desktop {
+            flex: 0 0 31%;
+            margin-left: 1%;
+            margin-right: 1%;
+        }
+        @media @device-desktop-lg {
+            flex: 0 0 23%;
+            margin-left: 1%;
+            margin-right: 1%;
+        }
+    }
+}
+
+.card {
+    position: relative;
+    box-shadow: 0 3px 1px -2px rgba(0,0,0,.2),0 2px 2px 0 rgba(0,0,0,.14),0 1px 5px 0 rgba(0,0,0,.12);
+    margin-top: 30px;
+    .card-title {
+        h3 {
+            margin: 0;
+            padding: 21px 18px;
+            font-size: 46px;
+            font-weight: 100;
+            overflow: hidden;
+            a, a:hover {
+                color: #333;
+                text-decoration: none;
+            }
+        }
+    }
+    .card-content {
+        height: 268px;
+        overflow: hidden;
+        img {
+            max-width: 100%;
+        }
+    }
+    .card-actions {
+        position: absolute;
+        bottom: 0;
+        width: 100%;
+
+        font-size: 16px;
+        padding: 21px 18px;
+        min-height: 64px;
+        background-color: white;
+        a {
+            color: #333;
+            font-weight: 200;
+            white-space: nowrap;
+            margin-left: 10px;
+        }
+    }
+}
+

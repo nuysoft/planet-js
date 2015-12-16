@@ -1,0 +1,20 @@
+{
+  "name": "planet-js",
+  "version": "0.0.0",
+  "authors": [
+    "mozhi.gyy <mozhi.gyy@alibaba-inc.com>"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap": "~3.3.5",
+    "jQuery": "~2.1.4",
+    "underscore": "~1.8.3"
+  }
+}
