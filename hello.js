@@ -42,6 +42,8 @@ var urls = [
 	'https://github.com/adamschwartz/log',
 	'https://angularjs.org/',
 	'https://github.com/angular/angular',
+	'http://vuejs.org/',
+	'http://okoala.github.io/vue-antd/#!/docs/introduce',
 	'http://backbonejs.org/',
 	'http://emberjs.com/',
 	'http://knockoutjs.com/',
@@ -228,7 +230,10 @@ function doit(url, width, height, next) {
 	console.log('    ' + file.gray)
 
 	fs.stat(file, function(error, stat) {
-		if (!error) next()
+		if (!error) {
+			next()
+			return
+		}
 
 		ph.createPage(function(page) {
 			page.onConsoleMessage(function() {
@@ -291,5 +296,6 @@ phantom.create({
 }, function(_ph) {
 	ph = _ph
 
-	queue.pop()()
+	queue[0]()
+		// queue.pop()()
 })
